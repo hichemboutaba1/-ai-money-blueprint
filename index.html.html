@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Money Blueprint — Apprends l'IA, Génère des Revenus</title>
+<meta name="description" content="Le guide complet pour maîtriser les intelligences artificielles et créer de vraies sources de revenus en ligne. Accès immédiat, 19,99€.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --blue: #1A6BFF;
+    --blue-light: #E8F0FF;
+    --blue-mid: #4D8EFF;
+    --blue-dark: #0A3EB5;
+    --ink: #0D1117;
+    --ink2: #2D3748;
+    --muted: #6B7280;
+    --border: #E5E9F0;
+    --surface: #F8FAFF;
+    --white: #FFFFFF;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--white); color: var(--ink); font-family: 'Sora', sans-serif; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+  a { color: var(--blue); text-decoration: none; }
+
+  /* NAV */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 2rem; border-bottom: 1px solid var(--border);
+    position: sticky; top: 0;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+  .nav-logo { font-weight: 700; font-size: 1rem; color: var(--ink); letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--blue); }
+  .nav-cta {
+    background: var(--blue); color: white;
+    font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600;
+    padding: 10px 24px; border: none; border-radius: 8px; cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .nav-cta:hover { background: var(--blue-dark); }
+
+  /* HERO */
+  .hero {
+    padding: 6rem 2rem 5rem; text-align: center;
+    max-width: 800px; margin: 0 auto;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--blue-light); color: var(--blue);
+    font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 100px; margin-bottom: 2rem;
+  }
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--blue); display: inline-block;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    font-weight: 600; line-height: 1.15; letter-spacing: -0.02em;
+    margin-bottom: 1.5rem; color: var(--ink);
+  }
+  .hero h1 em { font-style: italic; color: var(--blue); }
+  .hero p {
+    font-size: 1.1rem; color: var(--muted);
+    max-width: 540px; margin: 0 auto 2.5rem; font-weight: 300;
+  }
+  .hero-actions { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+  .btn-main {
+    background: var(--blue); color: white;
+    font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 600;
+    padding: 17px 48px; border: none; border-radius: 10px; cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(26,107,255,0.3);
+    text-decoration: none; display: inline-block;
+  }
+  .btn-main:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,107,255,0.35); }
+  .btn-sub { font-size: 0.85rem; color: var(--muted); }
+  .btn-sub strong { color: var(--ink); }
+
+  /* PROOF BAR */
+  .proof-bar {
+    background: var(--surface);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+  }
+  .proof-item { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; }
+  .proof-item .num { font-weight: 700; color: var(--ink); font-size: 1.1rem; }
+  .proof-item .label { color: var(--muted); }
+
+  /* SECTIONS */
+  .section { padding: 5rem 2rem; max-width: 880px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block; background: var(--blue-light); color: var(--blue);
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 4px; margin-bottom: 1rem;
+  }
+  .section h2 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+    font-weight: 600; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .section h2 em { font-style: italic; color: var(--blue); }
+  .section > p { color: var(--muted); font-weight: 300; max-width: 580px; }
+  hr.divider { border: none; border-top: 1px solid var(--border); }
+
+  /* PAIN */
+  .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+  .pain-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+  .pain-icon {
+    width: 36px; height: 36px; background: var(--blue-light); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; margin-bottom: 1rem;
+  }
+  .pain-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .pain-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* CHAPTERS */
+  .chap-list { margin-top: 2.5rem; display: flex; flex-direction: column; }
+  .chap {
+    display: grid; grid-template-columns: 48px 1fr; gap: 1.25rem;
+    align-items: start; padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+  }
+  .chap:first-child { border-top: 1px solid var(--border); }
+  .chap-n {
+    width: 40px; height: 40px; background: var(--blue-light); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem; color: var(--blue); flex-shrink: 0; margin-top: 2px;
+  }
+  .chap h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .chap p { font-size: 0.875rem; color: var(--muted); }
+
+  /* TESTIMONIALS */
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+  .testi { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; }
+  .stars { color: #F59E0B; font-size: 13px; letter-spacing: 2px; margin-bottom: 1rem; }
+  .testi blockquote {
+    font-size: 0.9rem; color: var(--ink2); font-style: italic;
+    margin-bottom: 1.25rem; line-height: 1.65; font-family: 'Lora', serif;
+  }
+  .testi-author strong { display: block; font-size: 0.85rem; font-weight: 600; color: var(--ink); }
+  .testi-author span { font-size: 0.78rem; color: var(--muted); }
+
+  /* INCLUDES */
+  .includes-grid { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2.5rem; }
+  .include-row {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.1rem 1.25rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 10px;
+  }
+  .check-circle {
+    width: 22px; height: 22px; background: var(--blue); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+  }
+  .check-circle svg { width: 12px; height: 12px; }
+  .include-row p { font-size: 0.9rem; color: var(--ink2); }
+  .include-row p strong { color: var(--ink); }
+
+  /* FAQ */
+  .faq-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-q {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 0; text-align: left;
+    font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--ink);
+  }
+  .faq-q:hover { color: var(--blue); }
+  .faq-icon {
+    width: 22px; height: 22px; background: var(--blue-light); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: var(--blue); flex-shrink: 0;
+    transition: transform 0.25s; font-weight: 300; line-height: 1;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    font-size: 0.9rem; color: var(--muted); line-height: 1.7;
+    transition: max-height 0.3s ease, padding 0.3s;
+    padding: 0;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 1.25rem; }
+
+  /* CTA BLOCK */
+  .cta-block {
+    background: var(--blue); border-radius: 20px;
+    padding: 4rem 2rem; text-align: center;
+    margin: 2rem 0; color: white;
+  }
+  .cta-block h2 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 600; margin-bottom: 0.75rem;
+  }
+  .cta-block > p { color: rgba(255,255,255,0.75); margin-bottom: 2.5rem; font-weight: 300; }
+  .price-box { margin-bottom: 2rem; }
+  .price-old { text-decoration: line-through; color: rgba(255,255,255,0.5); font-size: 1rem; margin-bottom: 0.25rem; }
+  .price-new { font-size: 4rem; font-family: 'Lora', serif; font-weight: 600; line-height: 1; }
+  .price-new sup { font-size: 1.5rem; vertical-align: super; }
+  .price-note { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem; }
+  .btn-white {
+    background: white; color: var(--blue);
+    font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 700;
+    padding: 17px 52px; border: none; border-radius: 10px; cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    text-decoration: none; display: inline-block;
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.22); }
+  .guarantee { margin-top: 1.5rem; font-size: 0.83rem; color: rgba(255,255,255,0.65); }
+
+  /* AUTHOR */
+  .author-box {
+    display: flex; align-items: flex-start; gap: 1.5rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 2rem; margin-top: 2.5rem;
+  }
+  .author-avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--blue-light); display: flex; align-items: center;
+    justify-content: center; font-size: 1.5rem; flex-shrink: 0;
+  }
+  .author-box h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .author-box p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+
+  footer {
+    text-align: center; padding: 2.5rem 2rem;
+    border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem;
+  }
+  footer a { color: var(--muted); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">AI Money <span>Blueprint</span></div>
+  <a class="nav-cta" href="https://hichemboutaba.gumroad.com/l/jtuvmy" target="_blank">Obtenir l'ebook — 19,99€</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Guide Complet 2024</div>
+  <h1>Apprends l'IA.<br><em>Génère des revenus.</em><br>Dès cette semaine.</h1>
+  <p>Le guide étape par étape pour maîtriser les intelligences artificielles et les utiliser pour créer de vraies sources de revenus en ligne — même en partant de zéro.</p>
+  <div class="hero-actions">
+    <a class="btn-main" href="https://hichemboutaba.gumroad.com/l/jtuvmy" target="_blank">Obtenir mon exemplaire maintenant →</a>
+    <span class="btn-sub">Accès immédiat · Paiement sécurisé · <strong>19,99€ une seule fois</strong></span>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-item"><span class="num">+2 400</span><span class="label">lecteurs</span></div>
+  <div class="proof-item"><span class="num">★ 4.9</span><span class="label">note moyenne</span></div>
+  <div class="proof-item"><span class="num">30 jours</span><span class="label">garantie remboursement</span></div>
+  <div class="proof-item"><span class="num">120+</span><span class="label">pages de stratégies</span></div>
+</div>
+
+<hr class="divider">
+
+<!-- PAIN POINTS -->
+<div class="section">
+  <div class="section-tag">Le problème</div>
+  <h2>Tu entends parler de l'IA partout —<br>mais tu ne sais pas <em>comment en profiter.</em></h2>
+  <p>Des milliers de personnes gagnent déjà de l'argent avec l'IA. Ce guide est fait pour toi si tu te reconnais ici :</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">🤯</div>
+      <h3>Submergé par l'information</h3>
+      <p>ChatGPT, Claude, Midjourney... Tu ne sais plus quoi choisir ni par où commencer.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">💸</div>
+      <h3>Tu veux gagner de l'argent</h3>
+      <p>Tu cherches une méthode concrète pour monétiser l'IA, pas juste de la théorie floue.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">⏱️</div>
+      <h3>Pas de temps à perdre</h3>
+      <p>Tu veux aller droit au but : les outils qui marchent, les stratégies qui rapportent vraiment.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CHAPTERS -->
+<div class="section">
+  <div class="section-tag">Contenu</div>
+  <h2>5 chapitres pour passer<br>de <em>débutant à actif.</em></h2>
+  <div class="chap-list">
+    <div class="chap">
+      <div class="chap-n">01</div>
+      <div>
+        <h3>Comprendre l'IA en 30 minutes</h3>
+        <p>Les bases essentielles sans jargon. Tu pars de zéro, c'est parfait — tout est expliqué simplement avec des exemples concrets.</p>
+      </div>
+    </div>
+    <div class="chap">
+      <div class="chap-n">02</div>
+      <div>
+        <h3>Maîtriser les 10 meilleurs outils IA</h3>
+        <p>ChatGPT, Claude, Midjourney, Notion AI... Chaque outil décortiqué avec son potentiel de revenus et comment le prendre en main rapidement.</p>
+      </div>
+    </div>
+    <div class="chap">
+      <div class="chap-n">03</div>
+      <div>
+        <h3>Les 7 stratégies pour générer des revenus</h3>
+        <p>Freelance IA, création de contenu, vente de prompts, automatisation, dropservicing... Comment choisir la bonne stratégie pour ton profil.</p>
+      </div>
+    </div>
+    <div class="chap">
+      <div class="chap-n">04</div>
+      <div>
+        <h3>Lancer ton activité dès cette semaine</h3>
+        <p>Plan d'action concret, templates de prompts, scripts prêts à l'emploi. Tu passes à l'action immédiatement sans te perdre.</p>
+      </div>
+    </div>
+    <div class="chap">
+      <div class="chap-n">05</div>
+      <div>
+        <h3>Scaler et automatiser tes revenus</h3>
+        <p>Comment multiplier tes gains sans multiplier ton temps grâce aux workflows IA avancés et à la délégation intelligente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TESTIMONIALS -->
+<div class="section">
+  <div class="section-tag">Témoignages</div>
+  <h2>Ils ont <em>déjà franchi le pas.</em></h2>
+  <div class="testi-grid">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <blockquote>"En 3 semaines j'ai lancé mon activité de rédaction IA. J'ai déjà 4 clients réguliers. Ce guide m'a économisé des mois de tâtonnements."</blockquote>
+      <div class="testi-author"><strong>Sophie M.</strong><span>Ex-secrétaire, maintenant freelance IA</span></div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <blockquote>"J'avais peur que ce soit trop technique. Mais tout est concret avec des exemples. J'ai fait mes 500€ premiers en moins d'un mois."</blockquote>
+      <div class="testi-author"><strong>Karim B.</strong><span>Étudiant, 22 ans</span></div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Le chapitre automatisation seul vaut 10x le prix. J'ai divisé mon temps de travail par 3 et doublé mes revenus en 2 mois."</blockquote>
+      <div class="testi-author"><strong>Laura V.</strong><span>Entrepreneuse digitale</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- WHAT YOU GET -->
+<div class="section">
+  <div class="section-tag">Ce que tu reçois</div>
+  <h2>Tout le nécessaire pour<br><em>commencer à gagner.</em></h2>
+  <div class="includes-grid">
+    <div class="include-row">
+      <div class="check-circle"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <p><strong>L'Ebook complet AI Money Blueprint</strong> — 120+ pages de stratégies immédiatement actionnables, expliquées simplement</p>
+    </div>
+    <div class="include-row">
+      <div class="check-circle"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <p><strong>50 Prompts Premium prêts à l'emploi</strong> — Les meilleurs prompts pour chaque cas d'usage professionnel</p>
+    </div>
+    <div class="include-row">
+      <div class="check-circle"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <p><strong>Tableau de bord Notion offert</strong> — Pour organiser et suivre ton activité IA dès le premier jour</p>
+    </div>
+    <div class="include-row">
+      <div class="check-circle"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <p><strong>Mises à jour gratuites à vie</strong> — L'IA évolue vite, le guide aussi. Tu reçois chaque mise à jour automatiquement.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- AUTHOR -->
+<div class="section">
+  <div class="section-tag">L'auteur</div>
+  <h2>Un guide créé par<br><em>un passionné de l'IA.</em></h2>
+  <div class="author-box">
+    <div class="author-avatar">🤖</div>
+    <div>
+      <h3>L'équipe AI Money Blueprint</h3>
+      <p>Passionnés d'intelligence artificielle depuis ses débuts, nous avons testé des centaines d'outils, de stratégies et de méthodes pour identifier ce qui fonctionne vraiment. Ce guide est le résultat de mois d'expérimentation et de centaines d'heures passées à maîtriser l'IA pour la transformer en source de revenus concrète et accessible à tous.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<div class="section">
+  <div class="section-tag">Questions fréquentes</div>
+  <h2>Tu as des questions ?<br><em>Voici les réponses.</em></h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Est-ce que ce guide est fait pour les débutants complets ?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Oui, à 100%. Tu n'as besoin d'aucune compétence technique. Tout est expliqué de zéro, avec des exemples concrets et un langage simple. Si tu sais utiliser un smartphone, tu peux appliquer ce guide.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Combien de temps avant de voir mes premiers résultats ?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Certains lecteurs ont vu leurs premiers revenus en moins de 2 semaines. Tout dépend du temps que tu y consacres et de la stratégie choisie. Le guide inclut un plan d'action sur 7 jours pour démarrer rapidement.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Comment je reçois l'ebook après l'achat ?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Immédiatement après ton paiement via Gumroad, tu reçois un email avec le lien de téléchargement. Le fichier PDF est disponible instantanément sur tous tes appareils (ordinateur, téléphone, tablette).</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Est-ce qu'il faut payer des abonnements en plus ?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Non, le guide est conçu pour démarrer avec des outils gratuits. Il indique clairement quand et pourquoi passer à une version payante — mais ce n'est jamais obligatoire pour commencer à générer des revenus.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Et si je ne suis pas satisfait ?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Tu es couvert par une garantie satisfait ou remboursé de 30 jours, sans aucune question. Si le guide ne te convient pas, tu envoies un email et tu es remboursé intégralement. Zéro risque pour toi.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Le guide est-il à jour avec les derniers outils IA ?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Oui. L'IA évolue très vite, c'est pourquoi toutes les mises à jour du guide sont offertes à vie. Tu achètes une fois et tu reçois toutes les nouvelles versions automatiquement par email.</div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CTA FINAL -->
+<div class="section">
+  <div class="cta-block">
+    <h2>Prêt à générer tes<br>premiers revenus avec l'IA ?</h2>
+    <p>Rejoins les 2 400+ personnes qui ont déjà transformé leur rapport à l'IA en source de revenus concrète.</p>
+    <div class="price-box">
+      <div class="price-old">Valeur réelle : 47€</div>
+      <div class="price-new"><sup>€</sup>47</div>
+      <div class="price-note">Paiement unique · Accès immédiat · Téléchargement PDF instantané</div>
+    </div>
+    <a class="btn-white" href="https://hichemboutaba.gumroad.com/l/jtuvmy" target="_blank">Je veux mon exemplaire →</a>
+    <div class="guarantee">🔒 Garantie satisfait ou remboursé 30 jours — Zéro risque pour toi.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom: 0.5rem; font-weight: 500; color: #374151;">AI Money Blueprint</p>
+  <p style="margin-bottom: 1rem;">© 2024 AI Money Blueprint · Tous droits réservés</p>
+  <p><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a> · <a href="#">Contact</a></p>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+</body>
+</html>
